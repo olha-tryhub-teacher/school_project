@@ -1,6 +1,7 @@
 # Портал групи — Архітектура Django проєкту
 
-[ПОСИЛАННЯ НА ПРЕЗЕНТАЦІЮ](https://docs.google.com/presentation/d/1fuIGiBZkXGveitLcBIB1I_Yfk6lMfJcrqMsPOjGHVT0/edit?slide=id.g3cfcb7429d2_0_0#slide=id.g3cfcb7429d2_0_0)
+[ПОСИЛАННЯ НА ПРЕЗЕНТАЦІЮ М5У1](https://docs.google.com/presentation/d/1fuIGiBZkXGveitLcBIB1I_Yfk6lMfJcrqMsPOjGHVT0/edit?slide=id.g3cfcb7429d2_0_0#slide=id.g3cfcb7429d2_0_0)
+[ПОСИЛАННЯ НА ПРЕЗЕНТАЦІЮ М5У2](https://docs.google.com/presentation/d/17iazji_485xHjNA_VVf25H6Is5hbWnYV/edit?slide=id.p1#slide=id.p1)
 
 ---
 
