@@ -1,0 +1,7 @@
+<h1>Події за {{ date }}</h1>
+
+<ul>
+  {% for event in events %}
+    <li>{{ event.event.title }}</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+<h1>Календар</h1>
+
+<ul>
+  {% for day in days %}
+    <li>
+        <a href="/date/{{ day.date|date:'Y-m-d' }}/">        {{ day.date }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
