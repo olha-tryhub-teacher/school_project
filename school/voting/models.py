@@ -6,7 +6,8 @@ from django.db import models
 class Vote(models.Model):
     title = models.OneToOneField(User, on_delete=models.CASCADE, related_name='vote')
     description = models.TextField()
-    create_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='votes')
+    created_at = models.DateTimeField(auto_now_add=True)
+    create_by = models.DateTimeField(auto_now_add=True)
     end_date = models.DateTimeField(auto_now_add=True)
 
 class VoteOption(models.Model):
@@ -18,3 +19,6 @@ class UserVote(models.Model):
     vote = models.ForeignKey(Vote, on_delete=models.CASCADE, related_name='votes')
     option = models.ForeignKey(VoteOption, on_delete=models.CASCADE, related_name='options')
     voted_at = models.DateTimeField(auto_now_add=True)
+
+class FilterVote(models.Model):
+    pass

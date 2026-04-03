@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Список голосувань</h2>
+    <ul class="list-group">
+        {% for vote in votes %}
+        <li>
+            <div class="list-group-item d-flex justify-content-between align-items-center">
+                <h3> {{ vote.title }} </h3>
+                <h2> {{ vote.description }}</h2>
+                <span class=""> </span>
+            </div>
+            <form action="{% url 'votes:list-vote'%}" method="post">
+
+            </form>
+        </li>
+        {% empty %}
+            <li class="list-group-item">Голосувань не знайдено.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
