@@ -1,11 +1,31 @@
-from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView, DetailView
 from .models import Announcement
 
-def announcement_list(request):
-    announcements = Announcement.objects.filter(is_active=True).order_by('-created_at')
-    return render(request, 'Announcements/announcement_list.html', {'announcements': announcements})
 
-def announcement_detail(request, pk):
-    announcement = get_object_or_404(Announcement, pk=pk)
-    return render(request, 'Announcements/announcement_detail.html', {'announcement': announcement})
-# Create your views here.
+class AnnouncementListView(ListView):
+    model = Announcement
+    template_name = 'Announcements/announcement_list.html'
+    context_object_name = 'announcements'
+    paginate_by = 10
+
+    def get_queryset(self):
+        return Announcement.objects.filter(is_active=True).order_by('-created_at')
+
+
+class AnnouncementDetailView(DetailView):
+    model = Announcement
+    template_name = 'Announcements/announcement_detail.html'
+    context_object_name = 'announcement'
+
+    # Код з твоєї картинки:
+    def get(self, request, *args, **kwargs):
+        announcement_id = str(kwargs["pk"])
+        viewed = request.session.get("viewed_announcements", [])
+        if announcement_id not in viewed:
+            obj = self.get_object()
+            obj.views_count += 1
+            obj.save()
+            viewed.append(announcement_id)
+            request.session["viewed_announcements"] = viewed
+
+        return super().get(request, *args, **kwargs)
