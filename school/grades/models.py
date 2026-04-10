@@ -4,9 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Teacher(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE)
-    subjects = []
-    students = []
-
+    subjects = models.ManyToManyField('Subject')
+'''
     def __str__(self):
         return self.name
 
@@ -43,17 +42,20 @@ class Teacher(models.Model):
     def clear(self):
         self.subjects = []
         self.students = []
-
+'''
 class Student(models.Model):
     name = models.ForeignKey(User, on_delete=models.CASCADE)
+    # subjects =
 
-    def __str__(self):
-        return self.name
+class Course(models.Model):
+    halfyear = models.PositiveIntegerField()
+    subject = models.ForeignKey('Subject', on_delete=models.CASCADE)
+    teacher = models.ForeignKey('Teacher', on_delete=models.CASCADE)
 
 class Subject(models.Model):
-    #teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
-    #student = models.ForeignKey(Student, on_delete=models.PROTECT)
     name = models.CharField(max_length=20)
 
 class Grade(models.Model):
-    grade = models.IntegerField(min_value=0)
+    student = models.ForeignKey('Student', on_delete=models.CASCADE)
+    grade = models.PositiveIntegerField()
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
