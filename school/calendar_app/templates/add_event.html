@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container">
+  <h1>Додати подію</h1>
+
+  <form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Додати</button>
+  </form>
+
+  <br>
+  <a class="back-btn" href="/">Повернутися на головну</a>
+</div>

@@ -1,0 +1,137 @@
+body {
+    background-color: #f3ece0;
+    font-family: sans-serif;
+    color: #4e342e; /* Темно-коричневый текст для контраста */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center; /* Центрируем всё содержимое */
+}
+
+.reset-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #a1887f; /* Спокойный коричневый */
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 12px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    background-color: #8d6e63;
+    transform: translateY(-2px);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: #fafafa;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #5d4037;
+}
+
+li:hover {
+    background: #efebe9;
+    border-color: #d7ccc8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Расстояние между полями */
+    margin-top: 20px;
+}
+
+input, select {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    border: 1px solid #d7ccc8;
+    border-radius: 8px;
+    background-color: #fafafa;
+    color: #4e342e;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #a1887f;
+    box-shadow: 0 0 5px rgba(161, 136, 127, 0.2);
+}
+
+button, input[type="submit"] {
+    background-color: #6d4c41;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    width: 100%;
+    max-width: 250px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #5d4037;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #d7ccc8; /* Светло-коричневый (кофе с молоком) */
+    color: #5d4037 !important; /* Темно-коричневый текст */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 10px; /* Закругляем как у кнопки "Додати" */
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Эффект при наведении */
+.back-btn:hover {
+    background-color: #bcaaa4; /* Чуть темнее при наведении */
+    transform: translateY(-2px); /* Легкий прыжок вверх */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Исправляем отступы формы, которую генерирует {{ form.as_p }} */
+form p {
+    margin-bottom: 15px;
+    text-align: left; /* Чтобы названия полей были слева */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #5d4037;
+}

@@ -1,10 +1,24 @@
-<h1>Календар</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-<ul>
-  {% for day in days %}
-    <li>
-        <a href="/date/{{ day.date|date:'Y-m-d' }}/">        {{ day.date }}
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="container">
+  <h1>Календар</h1>
+
+  <div>
+    <a class="reset-btn" href="/add/">Додати подію</a>
+  </div>
+
+  <p>Ви заходили: {{ visits }} разів</p>
+
+  <div>
+    <a class="reset-btn" href="/reset/">Збрости лічильник</a>
+  </div>
+
+  <ul>
+    {% for day in days %}
+      <li>
+        <a href="/date/{{ day.date|date:'Y-m-d' }}/">{{ day.date }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,7 +1,18 @@
-<h1>Події за {{ date }}</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="container">
+  <h1>Події за {{ date }}</h1>
 
-<ul>
-  {% for event in events %}
-    <li>{{ event.event.title }}</li>
-  {% endfor %}
-</ul>
+  <a class="back-btn" href="/">Повернутись к календару</a>
+
+  <ul>
+    {% for event in events %}
+      <li>
+        <strong>{{ event.event.title }}</strong><br>
+        <span>{{ event.event.description }}</span>
+      </li>
+    {% empty %}
+      <li>Немає подій</li>
+    {% endfor %}
+  </ul>
+</div>

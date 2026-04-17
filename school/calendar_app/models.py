@@ -13,3 +13,5 @@ class CalendarDay(models.Model):
 class CalendarEvent(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     date = models.DateField()
+
+
