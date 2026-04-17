@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ event.title }}</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f7f6; }
+        .container { max-width: 800px; margin: 40px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; margin-top: 0; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        .info-row { margin-bottom: 12px; font-size: 1.1em; display: flex; align-items: center; }
+        .info-label { font-weight: bold; width: 120px; color: #7f8c8d; }
+        .description-box { background: #f9f9f9; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; margin-top: 25px; }
+        .description-box h3 { margin-top: 0; color: #2980b9; }
+
+        /* Кнопки */
+        .actions { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: all 0.3s ease; text-align: center; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+        .btn-edit { background-color: #f1c40f; color: #000; }
+        .btn-delete { background-color: #e74c3c; color: #fff; }
+        .btn-back { background-color: #34495e; color: #fff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ event.title }}</h1>
+
+    <div class="info-row">
+        <span class="info-label">📍 Локація:</span>
+        <span>{{ event.location }}</span>
+    </div>
+    <div class="info-row">
+        <span class="info-label">📅 Початок:</span>
+        <span>{{ event.start_date|date:"d.m.Y H:i" }}</span>
+    </div>
+    <div class="info-row">
+        <span class="info-label">🏁 Фініш:</span>
+        <span>{{ event.end_date|date:"d.m.Y H:i" }}</span>
+    </div>
+
+    <div class="description-box">
+        <h3>Опис події</h3>
+        <p>{{ event.description|linebreaks }}</p>
+    </div>
+
+    <div class="actions">
+        <a href="{% url 'event_edit' event.pk %}" class="btn btn-edit">📝 Редагувати</a>
+        <a href="{% url 'event_delete' event.pk %}" class="btn btn-delete">🗑️ Видалити</a>
+        <a href="{% url 'event_list' %}" class="btn btn-back">← До списку</a>
+    </div>
+</div>
+
+</body>
+</html>

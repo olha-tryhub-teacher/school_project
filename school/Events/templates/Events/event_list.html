@@ -1,0 +1,28 @@
+{% extends 'Events/base.html' %}
+
+{% block title %}Список подій{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Актуальні події</h2>
+<div class="row">
+    {% for event in events %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title text-primary">{{ event.title }}</h5>
+                <p class="card-text text-muted">{{ event.description|truncatechars:100 }}</p>
+                <div class="mb-2">
+                    <small>📍 {{ event.location }}</small><br>
+                    <small>📅 {{ event.start_date|date:"d.m.Y H:i" }}</small>
+                </div>
+                <a href="{% url 'event_detail' event.pk %}" class="btn btn-outline-primary btn-sm w-100">Детальніше</a>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-info">Подій поки немає. Будь першим, хто створить!</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+<h1>Видалити подію?</h1>
+<p>Ви впевнені, що хочете видалити "{{ object.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" style="background-color: red; color: white;">Так, видалити</button>
+    <a href="{% url 'event_detail' object.pk %}">Скасувати</a>
+</form>
