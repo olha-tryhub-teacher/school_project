@@ -4,6 +4,8 @@
 
 [ПОСИЛАННЯ НА ПРЕЗЕНТАЦІЮ М5У2](https://docs.google.com/presentation/d/17iazji_485xHjNA_VVf25H6Is5hbWnYV/edit?slide=id.p1#slide=id.p1)
 
+[ПОСИЛАННЯ НА ПРЕЗЕНТАЦІЮ М5У5](https://docs.google.com/presentation/d/1qJtaAZvXn4VogssObAjOmdnybYoKyCZ75bHLxgPA4Wc/edit?slide=id.g3c6a2d16174_0_0#slide=id.g3c6a2d16174_0_0)
+
 ---
 
 ## Зміст
