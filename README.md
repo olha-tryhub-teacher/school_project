@@ -19,7 +19,7 @@
 - [Forum — форум](#forum)
 - [Grades — електронний щоденник](#grades)
 - [Events — події](#events)
-- [Calendar — календар подій](#calendar)
+- [Calendar — календар подій](./school/calendar_app/README.md)
 - [Polls — система опитувань](#polls)
 - [Voting — система голосувань](#voting)
 - [Announcements — оголошення](#announcements)
